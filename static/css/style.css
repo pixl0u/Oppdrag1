@@ -24,6 +24,7 @@ nav a{color: white;}
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -53,8 +54,13 @@ nav a{color: white;}
 .box img{
     width: 60%;
     border-radius: 10px;
+    margin-left: 19%;
 }
+.box p{
+margin-left: 19%;
+margin-top: -3%;
 
+}
 .over{
     display: block;
 }
@@ -84,4 +90,39 @@ select{
     background-color: rgb(22, 32 ,41);
     padding: 1%;
     color: white;
+}
+
+
+.kino{
+    display: flex;
+    justify-content: center;
+}
+
+.omoss{
+    width: 50%;
+    margin-left: 25%;
+}
+
+#kinob{
+    width: 70%;
+    margin-left: 15%;
+}
+
+.mid{
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
+.ferdig{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(22, 32 ,41);
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    border-width: 0.5%;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-left: 24%;
 }

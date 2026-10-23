@@ -5,6 +5,7 @@ sted='film'
 tittel='film'
 img=''
 text='film text'
+pris = 0
 
 @app.route("/endre_sted")
 def endre_sted():
@@ -12,10 +13,12 @@ def endre_sted():
     global tittel
     global img
     global text
+    global pris
     sted = "Clayface"
     tittel = 'Clayface'
     img = '/static/img/Clayface.png'
     text = 'Matt Hagens reise fra gategutt til hollywoodstjerne er nær ved å fullendes, når en av Gothams mafiosoer ødelegger alt ved å vansire ham. Alene og uten mer å tape, oppsøker Matt hjelp gjennom en banebrytende behandling som gir ham sitt gamle jeg tilbake... Samtidig som det uventet påvirker hans grep om virkeligheten, noe som leder ham ut på en ferd drevet av altoppslukende hevn.'
+    pris = 299
     return redirect(url_for("bilett"))
 
 @app.route("/endre_sted1")
@@ -24,6 +27,8 @@ def endre_sted1():
     global tittel
     global img
     global text
+    global pris
+    pris = 349
     sted='Street fighter'
     tittel='Street fighter'
     img='/static/img/Street-Fighter.png'
@@ -36,6 +41,8 @@ def endre_sted2():
     global tittel
     global img
     global text
+    global pris
+    pris = 150
     sted = "Verity"
     tittel='Verity'
     img='/static/img/Verity.png'
@@ -48,6 +55,8 @@ def endre_sted3():
     global tittel
     global img
     global text
+    global pris
+    pris = 120
     sted = "Digger"
     tittel='Digger'
     img='/static/img/Digger.png'
@@ -60,6 +69,8 @@ def endre_sted4():
     global tittel
     global img
     global text
+    global pris
+    pris = 499
     sted = "Spider-Man: Brand New Day"
     tittel='Spider-Man: Brand New Day'
     img='/static/img/Spider-Man-Brand–New-Day.png'
@@ -72,6 +83,8 @@ def endre_sted5():
     global tittel
     global img
     global text
+    global pris
+    pris = 189
     sted = "Lille spøkelset Laban skøyer igjen"
     tittel='Lille spøkelset Laban skøyer igjen'
     img='/static/img/Lille-spøkelset-Laban-skøyer-igjen.png'
@@ -90,16 +103,18 @@ def bilett():
     global tittel
     global img
     global text
+    global pris
     side='2'
     filmer=['Clayface','Street Fighter','Verity','Digger','Spider-Man: Brand New Day','Lille spøkelset Laban skøyer igjen']
     filmer.insert(0,sted)
     if request.method == "POST":
         navn = request.form["navn"]
         sete = request.form["sete"]
-        antall = request.form["antall"]
+        antall = int(request.form["antall"])
         film = request.form["film"]
-        return render_template("ferdig.html",navn=navn,sete=sete,antall=antall,film=film)
-    return render_template('bilett.html',filmer=filmer,sted=sted,tittel=tittel,img=img,text=text)
+        pris=pris*antall
+        return render_template("ferdig.html",navn=navn,sete=sete,antall=antall,film=film,pris=pris)
+    return render_template('bilett.html',filmer=filmer,sted=sted,tittel=tittel,img=img,text=text,pris=pris)
 
 
 @app.route("/ferdig")

@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 {% block title %}ferdig side{% endblock %}
 {% block content %}
-<h1>kino kino</h1>
-
+<h1 class="kino">kino kino bestilling</h1>
+<div class="ferdig">
 <p>Film: {{film}}</p>
-<p>Navn: {{navn}}</p>
+<br>
+<p>Email: {{navn}}</p>
+<br>
 <p>Sete: {{sete}}</p>
+<br>
 <p>antall biletter: {{antall}}</p>
-<p></p>
+<br>
+<p>pris: {{pris}}kr</p>
+<br>
+</div>
+<button class="mid">Gå til betaling</button>
 
 {% endblock %}

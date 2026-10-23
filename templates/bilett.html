@@ -7,6 +7,8 @@
 <h1>{{tittel}}</h1>
 
 <p>{{text}}</p>
+<br>
+<p>Pris: {{pris}}kr</p>
 </div>
 </div>
 <br>
@@ -20,8 +22,8 @@
 {% endfor %}
 </select>
 
-<label for="navn">navn: </label>
-<input type="text" id="navn" name="navn" placeholder="fornavn etternavn" required>
+<label for="navn">Epost: </label>
+<input type="email" id="navn" name="navn" placeholder="example@example.com" required autofocus>
 
 <label for="sete">sete: </label>
 <input type="text" id="sete" name="sete" placeholder="C3" required>
