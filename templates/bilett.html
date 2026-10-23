@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}bilett{% endblock %}
+{% block content %}
+<div class="filmr">
+<img src="{{img}}" alt="bildet av filmen">
+<div class="over">
+<h1>{{tittel}}</h1>
+
+<p>{{text}}</p>
+</div>
+</div>
+<br>
+<br>
+<form method="POST" class="form">
+
+<label for="film">Film: </label>
+<select id="film" name="film" required>
+{% for film in filmer %}
+<option value="{{ film }}">{{ film }}</option>
+{% endfor %}
+</select>
+
+<label for="navn">navn: </label>
+<input type="text" id="navn" name="navn" placeholder="fornavn etternavn" required>
+
+<label for="sete">sete: </label>
+<input type="text" id="sete" name="sete" placeholder="C3" required>
+
+<label for="antall">Antall bilett: </label>
+<input type="number" id="antall" name="antall" min="1" required>
+
+<button type="submit" id="knapp">Send</button>
+
+</form>
+
+{% endblock %}
