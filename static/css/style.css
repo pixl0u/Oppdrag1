@@ -9,6 +9,11 @@ nav{
     gap: 5%;
 }
 
+nav a{
+    color: white;
+    transition: 0.3s;
+}
+
 nav a:hover{
     transform: scale(1.3);
 
@@ -17,7 +22,7 @@ body{
     background-color: rgb(28, 42, 54);
     color: rgb(219, 237, 253);
 }
-nav a{color: white;}
+
 
 .box{
     border-radius: 50px;
@@ -25,8 +30,12 @@ nav a{color: white;}
     gap: 20px;
     justify-content: center;
     flex-direction: column;
+    transition: 0.3s;
 }
 
+.box:hover{
+    transform: scale(1.05);
+}
 
 .content{
     display: grid;
@@ -81,7 +90,13 @@ button{
     background-color: rgb(22, 32 ,41);
     padding: 1%;
     color: white;
+    transition: 0.3s;
 }
+
+button:hover{
+    transform: scale(1.1);
+}
+
 
 select{
     border-style: solid;
@@ -110,7 +125,7 @@ select{
 
 .mid{
     margin-left: 45%;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 .ferdig{
@@ -125,4 +140,27 @@ select{
     align-items: center;
     width: 50%;
     margin-left: 24%;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+.filmr{
+    display: block;
+}
+
+.filmr img{
+    margin-left: 25%;
+}
+
+.form{
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mid{
+    margin-left: 40%;
+    margin-bottom: 5%;
+}
+
 }
